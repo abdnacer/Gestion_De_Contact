@@ -999,7 +999,7 @@
 										"$ref": "AAAAAAGAA1SX5NJkuMQ="
 									},
 									"edgePosition": 2,
-									"text": "1..*"
+									"text": "*"
 								},
 								{
 									"_type": "EdgeLabelView",
@@ -1052,11 +1052,11 @@
 									},
 									"font": "Arial;13;0",
 									"left": 347,
-									"top": 249,
+									"top": 248,
 									"width": 7.22998046875,
 									"height": 13,
-									"alpha": 0.5235987755982988,
-									"distance": 25,
+									"alpha": 0.58172631567515,
+									"distance": 25.238858928247925,
 									"hostEdge": {
 										"$ref": "AAAAAAGAA1SX5NJkuMQ="
 									},
@@ -1491,7 +1491,7 @@
 								"reference": {
 									"$ref": "AAAAAAF/+foS2Fk4p1k="
 								},
-								"multiplicity": "1..*"
+								"multiplicity": "*"
 							},
 							"end2": {
 								"_type": "UMLAssociationEnd",
