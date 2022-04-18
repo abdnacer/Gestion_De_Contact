@@ -1,7 +1,7 @@
 <?php
   require_once '../function.php';
-
   $insert = new Contact();
+  $insert->conn = Contact::connect();
   $erroremail = "";
   if($_SERVER['REQUEST_METHOD'] == 'POST'){
     if(!empty($_POST["username"]) && !empty($_POST["email"]) && !empty($_POST["phone"]) && !empty($_POST["address"])) {

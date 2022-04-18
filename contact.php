@@ -1,5 +1,7 @@
 <?php
   require_once 'function.php';
+  $info = new Contact();
+  $info->conn = Contact::connect();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,10 +46,8 @@
       <tbody>
 
         <?php 
-          $info = new Contact();
-          $result = $info->show(0);
-        ?>
-        <?php foreach($result as $show_contacts) :?>
+          $result = $info->show($info->conn);
+          foreach($result as $show_contacts) :?>
          <tr>
            <th scope="row"><?php echo $show_contacts['id'] ?></th>
            <td><?php echo $show_contacts['username'] ?></td>

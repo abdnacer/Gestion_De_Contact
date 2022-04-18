@@ -1,7 +1,8 @@
 <?php
   require_once 'function.php';
   $register = new User();
-  $erroremail = "";
+  $register->conn = Contact::connect();
+  $error = "";
   if($_SERVER['REQUEST_METHOD'] == 'POST'){
     if(!empty($_POST["name"]) && !empty($_POST["prenom"]) && !empty($_POST["email"]) && !empty($_POST["password"])) {
       $result = $register->register(
@@ -12,10 +13,9 @@
       );
     }
     else{
-      $erroremail = 'email incorect';
+      $error = "inputs can't be blank";
     }
   }
-
 ?>
 
 <!DOCTYPE html>
@@ -34,26 +34,29 @@
       <img src="images/Sign_up.png" alt="Sign_in">
     </div>
     <div class="part1_form">
-      <h1 id="title">Sign_up</h1>
+      <h1 id="title">Sign up</h1>
       <!-- autocomplete="off/on" -->
-      <form action="" method="post" >
-      <div class='fs-4 text-danger input_container mb-4 mt-4'><?php echo $erroremail;?></div>
-        <!-- <div class=" input_container bg-light text-danger w-50 d-flex justify-content-center align-items-center py-2 fs-4 mb-4 border border-danger rounded-3">gvhjk</div> -->
+      <form id="formSignup" action="" method="post" >
+      <div class='fs-4 text-danger input_container'><?php echo $error;?></div>
         <div class="input_container">
           <label for="name">Name :</label>
-          <input class="inpt" id="name" type="text" name="name">
+          <input class="inpt" id="nameSignup" type="text" name="name">
+          <div class="fs-6 text-danger errorName"></div>
         </div>
         <div class="input_container">
           <label for="prenom">Prenom :</label>
-          <input class="inpt" id="prenom" type="text" name="prenom">
+          <input class="inpt" id="prenomSignup" type="text" name="prenom">
+          <div class="fs-6 text-danger errorPrenom"></div>
         </div>
         <div class="input_container">
           <label for="email">Email :</label>
-          <input class="inpt" id="email" type="email" name="email">
+          <input class="inpt" id="emailSignup" type="email" name="email">
+          <div class="fs-6 text-danger errorEmail"></div>
         </div>
         <div class="input_container">
           <label for="password">Password :</label>
-          <input class="inpt" id="password" type="password" name="password">
+          <input class="inpt" id="passwordSignup" type="password" name="password">
+          <div class="fs-6 text-danger errorPassword"></div>
         </div>
         <button type="submit" class="btn_signin" name="save">Sign up</button>
         <p class="para">Already have an account?<a href="index.php">Login here.</a></p>

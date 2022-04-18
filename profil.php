@@ -34,7 +34,7 @@
       <div class="info_profil">
         <p class="text-capitalize">Username : <?php echo $_SESSION['name'] . " " . $_SESSION['prenom'];?></p>
         <p>Signup date : <?php echo $_SESSION['created']?></p>
-        <p>Sigin date : Monday, 08 April 2019 14:24:20</p>
+        <p>Sigin date : <?php echo $_SESSION['date']?></p>
       </div>
     </div>
   </div>

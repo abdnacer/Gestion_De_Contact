@@ -2,12 +2,12 @@
   require_once '../function.php';
 
   if($_SERVER["REQUEST_METHOD"] == 'GET'){
-    $user = Contact::show($_GET['edit']);
+    $user = Contact::show(Contact::connect(), $_GET['edit']);
   }
   else{
-    Contact::update($_POST['id'], $_POST['username'], $_POST['email'], $_POST['phone'], $_POST['address']);
-
-
+    Contact::update(Contact::connect(),$_POST['id'], $_POST['username'], $_POST['email'], $_POST['phone'], $_POST['address']);
+    header('location: ../contact.php'); 
+    exit();
   }
 
 ?>
@@ -33,28 +33,27 @@
       
       <div class="inpt_contact">
         <label for="username">Username :</label>
-        <input type="username" name="username" value="<?php echo $user['username'] ?>">
+        <input type="username" name="username" value="<?php echo $user[0]['username'] ?>">
       </div>
 
       <div class="inpt_contact">
         <label for="email">Email :</label>
-        <input type="email" name="email" value="<?php echo $user['email'] ?>">
+        <input type="email" name="email" value="<?php echo $user[0]['email'] ?>">
       </div>
 
       <div class="inpt_contact">
         <label for="phone">Phone :</label>
-        <input type="phone" name="phone" value="<?php echo $user['phone'] ?>">
+        <input type="phone" name="phone" value="<?php echo $user[0]['phone'] ?>">
       </div>
 
       <div class="inpt_contact">
         <label for="address">Address :</label>
-        <input type="address" name="address" value="<?php echo $user['address'] ?>">
+        <input type="address" name="address" value="<?php echo $user[0]['address'] ?>">
       </div>
       <div class="sbt_contact">
-        <a href="../contact.php" class="btn btn-secondary" type="button">Cancel</a>
-        <button class="btn btn-dark" type="button" name="edit" >edit Contact</button>
+        <a href="../contact.php" class="btn btn-secondary" type="submit">Cancel</a>
+        <button class="btn btn-dark" type="submit" name="edit" >edit Contact</button>
       </div>
-      
     </form>
   </div>
   

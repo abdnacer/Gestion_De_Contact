@@ -42,12 +42,19 @@
 .part1_form input{
   width: 100%;
   display: block;
-  padding: 8px 0;
   border-radius: 10px;
-  margin-bottom: 30px;
+  padding: 8px 5px;
+  position: relative;
 }
 
+/* .input_container{ 
+  position: absolute;
+  content: "&#xf00c;";
+  color: black;
+} */
+
 .part1_form label{
+  margin-top: 30px;
   margin-bottom: 12px;
 }
 
@@ -56,7 +63,7 @@
   margin: 0 auto;
 }
 
-[type="submit"] {
+.btn_signin {
   display: block;
   margin: 0 auto;
   padding: .7rem 2.9rem;
@@ -66,9 +73,10 @@
   color: white;
   transition: all .2s ease-in;
   font-size: 19px;
+  margin-top: 20px;
 }
 
-[type="submit"]:hover {
+.btn_signin:hover {
   background: rgba(0, 0, 0, 0.7);
 }
 
@@ -206,7 +214,7 @@
   padding: 15px 0;
   display: flex;
   flex-direction: column;
-  width: 70%;
+  width: 70%; 
 }
 
 .inpt_contact label{
