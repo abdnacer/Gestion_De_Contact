@@ -17,22 +17,6 @@
     else{
       $erroremail = 'email incorect';
     }
-
-
-    //VALIDATION
-    // || !isset($_POST["prenom"]) || !isset($_POST["email"]) || !isset($_POST["password"])
-    // if(empty($_POST["name"])) {
-    //   $err = 'name is empty';
-    // }
-    //END VALIDATION
-
-    
-    // $result = $register->register(
-    //   $_POST["name"],
-    //   $_POST["prenom"],
-    //   $_POST["email"],
-    //   hash('ripemd160', $_POST['password'])
-    // );
   }
 
 ?>

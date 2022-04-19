@@ -1,5 +1,9 @@
 <?php
+  // if(isset($_SESSION['Name'])){
+  //   header("location: profil.php");
+  // }
   require_once 'function.php';
+
   $login = new User();
   $login->conn = User::connect();
   $error = '';
@@ -15,7 +19,6 @@
     $error = "inputs can't be blank";
   }
   }
-  
 ?>
 
 

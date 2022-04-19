@@ -47,7 +47,7 @@ class User extends Connection{
         // if(isset($_POST['checkcookie'])){
         //   setcookie('email', $row['email'], time() + 30); //60 * 60 * 24
         // }
-        header('location: profil.php');
+        header('location: profil.php'); 
       }
       else{
         return 'password not correct';
